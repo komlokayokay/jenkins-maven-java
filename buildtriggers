@@ -7,7 +7,7 @@ tools {
     stages {
         stage('SCM CHECKOUT') {
             steps {
-                git credentialsId: 'GitHub_credentials', url: https://github.com/komlokayokay/jenkinsmaster.git
+                git credentialsId: 'GitHub_credentials', url: 'https://github.com/komlokayokay/jenkinsmaster.git'
             }
         }
        stage('Maven -clean') {
