@@ -1,0 +1,29 @@
+pipeline {
+    agent any
+tools {
+  maven 'mvn'
+}
+
+    stages {
+        stage('SCM CHECKOUT') {
+            steps {
+                git credentialsId: 'GitHub_credentials', url: https://github.com/komlokayokay/jenkinsmaster.git
+            }
+        }
+       stage('Maven -clean') {
+            steps {
+                sh'mvn clean'
+             }
+       }
+        stage('Maven -Build') {
+            steps {
+                sh'mvn compile'
+            }
+        }
+        stage('Maven deploy'){
+            steps {
+                sh'mvn deploy'
+            }
+        }
+    }
+}
