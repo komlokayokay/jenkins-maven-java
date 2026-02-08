@@ -22,7 +22,7 @@ tools {
         }
         stage('Maven deploy'){
             steps {
-                sh'mvn deploy'
+                sh'mvn package'
             }
         }
     }
